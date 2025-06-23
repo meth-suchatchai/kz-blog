@@ -1,6 +1,5 @@
 'use client';
-import { useState } from 'react';
-import { Mail, MessageSquare, Send } from 'lucide-react';
+import { Mail, MessageSquare } from 'lucide-react';
 
 export const Contact = () => {
 	const socials = [
@@ -11,12 +10,11 @@ export const Contact = () => {
 		},
 	];
 
-	const [formData, setFormData] = useState({
-		name: '',
-		email: '',
-		message: '',
-	});
-
+	// const [formData, setFormData] = useState({
+	// 	name: '',
+	// 	email: '',
+	// 	message: '',
+	// });
 	// const handleSubmit = (e: React.FormEvent) => {
 	// 	e.preventDefault();
 	// 	console.log('Form submitted:', formData);
