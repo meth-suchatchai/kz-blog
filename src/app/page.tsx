@@ -5,32 +5,36 @@ import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Main } from '@/components/Main';
 import { Skills } from '@/components/Skill';
-// import Image from 'next/image';
+
 import { useEffect, useState } from 'react';
 
 export default function Home() {
 	const [loading, setLoading] = useState(true);
-
+	const [width, setWidth] = useState(0);
 	useEffect(() => {
 		// Simulate retro loading screen
-		const timer = setTimeout(() => setLoading(false), 2000);
-		return () => clearTimeout(timer);
-	}, []);
+		if (width < 100) {
+			const timer = setTimeout(() => setWidth(width + 1), 15); // Adjust speed here
+			return () => clearTimeout(timer);
+		} else {
+			setLoading(false);
+		}
+	}, [width]);
 
 	if (loading) {
 		return (
-			<div className="min-h-screen bg-pixel-black flex items-center justify-center pixel-grid">
+			<div className="min-h-screen bg-[var(--pixel-black)] flex items-center justify-center pixel-grid">
 				<div className="text-center">
-					<div className="text-pixel-green text-4xl font-pixel mb-8 animate-blink">
+					<div className="text-[var(--pixel-green)] text-4xl font-pixel mb-8 animate-blink">
 						LOADING...
 					</div>
-					<div className="w-64 h-4 border-2 border-pixel-green bg-pixel-gray-dark">
+					<div className="w-64 h-4 border-2 border-[var(--pixel-green)] bg-[var(--pixel-gray-dark)]">
 						<div
-							className="h-full bg-pixel-green animate-pulse"
-							style={{ width: '100%' }}
+							className="h-full bg-[var(--pixel-green)] animate-pulse"
+							style={{ width: `${width}%` }}
 						></div>
 					</div>
-					<div className="text-pixel-green text-sm font-pixel mt-4">
+					<div className="text-[var(--pixel-green)] text-sm font-pixel mt-4">
 						INITIALIZING KUROSHIBA.DEV
 					</div>
 				</div>
@@ -39,7 +43,7 @@ export default function Home() {
 	}
 
 	return (
-		<div className="min-h-screen bg-pixel-black text-pixel-white relative scanlines">
+		<div className="min-h-screen bg-[var(--pixel-black)] text-[var(--pixel-white)] relative scanlines">
 			<Header />
 			<main>
 				<Main />
