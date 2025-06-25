@@ -1,10 +1,22 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { useKonamiCode } from '@/hooks/use-konami';
 
 export const Main = () => {
 	const [text, setText] = useState('');
+	const [color, setColor] = useState('green');
 	const [showCursor, setShowCursor] = useState(true);
+	const colors = [
+		'green',
+		'yellow',
+		'cyan',
+		'white',
+		'magenta',
+		'red',
+		'blue',
+		'orange',
+	];
 	const fullText = "HELLO, I'M KUROSHIBA";
 
 	useEffect(() => {
@@ -24,7 +36,7 @@ export const Main = () => {
 			clearInterval(typeInterval);
 			clearInterval(cursorInterval);
 		};
-	}, []);
+	}, [color]);
 
 	const openCV = () => {
 		window.open(
@@ -37,6 +49,11 @@ export const Main = () => {
 		window.open('https://github.com/meth-suchatchai', '_blank');
 	};
 
+	useKonamiCode(() => {
+		window.location.href = '#home';
+		setColor(colors[Math.floor(Math.random() * colors.length)]);
+	});
+
 	return (
 		<section
 			id="home"
@@ -45,12 +62,22 @@ export const Main = () => {
 			<div className="text-center z-10">
 				{/* Pixel Art Avatar Placeholder */}
 				<div className="flex my-5">
-					<div className="w-32 h-32 mx-auto mb-8 bg-[var(--pixel-gray-dark)] border-4 border-[var(--pixel-green)] relative">
+					<div
+						className={`w-32 h-32 mx-auto mb-8 bg-[var(--pixel-gray-dark)] border-4 border-[var(--pixel-${color})] relative`}
+					>
 						<div className="absolute inset-4 bg-[var(--pixel-black)]"></div>
-						<div className="absolute top-6 left-6 w-4 h-4 bg-[var(--pixel-green)]"></div>
-						<div className="absolute top-6 right-6 w-4 h-4 bg-[var(--pixel-green)]"></div>
-						<div className="absolute bottom-8 left-8 w-16 h-2 bg-[var(--pixel-green)] rounded-full"></div>
-						<div className="text-[var(--pixel-green)] text-xs font-pixel absolute -bottom-8 left-1/2 transform -translate-x-1/2">
+						<div
+							className={`absolute top-6 left-6 w-4 h-4 bg-[var(--pixel-${color})]`}
+						></div>
+						<div
+							className={`absolute top-6 right-6 w-4 h-4 bg-[var(--pixel-${color})]`}
+						></div>
+						<div
+							className={`absolute bottom-8 left-8 w-16 h-2 bg-[var(--pixel-${color})] rounded-full`}
+						></div>
+						<div
+							className={`text-[var(--pixel-${color})] text-xs font-pixel absolute -bottom-8 left-1/2 transform -translate-x-1/2`}
+						>
 							KUROSHIBA
 						</div>
 					</div>

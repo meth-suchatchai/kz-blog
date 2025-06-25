@@ -1,6 +1,5 @@
 export const Footer = () => {
 	const currentYear = new Date().getFullYear();
-
 	return (
 		<footer className="py-12 px-4 border-t-2 border-[var(--pixel-green)]">
 			<div className="container mx-auto max-w-4xl">

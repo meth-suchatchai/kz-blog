@@ -1,12 +1,31 @@
+'use client';
+import { useState } from 'react';
+import SkillProgressBar, { ProgressBarProps } from './ui/skillProgressBar';
+
 export const Skills = () => {
-	const skills = [
-		{ name: 'GOLANG', level: 95, color: 'bg-[var(--pixel-cyan)]' },
-		{ name: 'REACT', level: 90, color: 'bg-[var(--pixel-blue)]' },
-		{ name: 'RDBMS/MONGODB', level: 85, color: 'bg-[var(--pixel-green)]' },
-		{ name: 'TYPESCRIPT', level: 80, color: 'bg-[var(--pixel-yellow)]' },
-		{ name: 'CI/CD', level: 75, color: 'bg-[var(--pixel-magenta)]' },
-		{ name: 'DIGITALOCEAN/AWS', level: 70, color: 'bg-[var(--pixel-red)]' },
-	];
+	const [skills] = useState([
+		{ name: 'GOLANG', level: 95, color: 'bg-[var(--pixel-cyan)]', width: 0 },
+		{ name: 'REACT', level: 90, color: 'bg-[var(--pixel-blue)]', width: 0 },
+		{
+			name: 'RDBMS/MONGODB',
+			level: 85,
+			color: 'bg-[var(--pixel-green)]',
+			width: 0,
+		},
+		{
+			name: 'TYPESCRIPT',
+			level: 80,
+			color: 'bg-[var(--pixel-yellow)]',
+			width: 0,
+		},
+		{ name: 'CI/CD', level: 75, color: 'bg-[var(--pixel-magenta)]', width: 0 },
+		{
+			name: 'DIGITALOCEAN/AWS',
+			level: 70,
+			color: 'bg-[var(--pixel-red)]',
+			width: 0,
+		},
+	]);
 
 	const tools = [
 		'JETBRAINS',
@@ -43,22 +62,10 @@ export const Skills = () => {
 
 						<div className="space-y-6">
 							{skills.map((skill) => (
-								<div key={skill.name}>
-									<div className="flex justify-between items-center mb-2">
-										<span className="font-pixel text-sm text-[var(--pixel-white)]">
-											{skill.name}
-										</span>
-										<span className="font-pixel text-xs text-[var(--pixel-green)]">
-											{skill.level}%
-										</span>
-									</div>
-									<div className="w-full h-4 bg-pixel-black border border-pixel-green">
-										<div
-											className={`h-full ${skill.color} transition-all duration-1000 ease-out`}
-											style={{ width: `${skill.level}%` }}
-										></div>
-									</div>
-								</div>
+								<SkillProgressBar
+									key={skill.name}
+									{...(skill as ProgressBarProps)}
+								/>
 							))}
 						</div>
 					</div>

@@ -172,7 +172,9 @@ export const Contact = () => {
 							<span className="text-[var(--pixel-yellow)]">~24 HOURS</span>
 							<br />
 							AVAILABILITY:{' '}
-							<span className="text-pixel-cyan">READY_FOR_PROJECTS</span>
+							<span className="text-[var(--pixel-cyan)]">
+								READY_FOR_PROJECTS
+							</span>
 						</div>
 					</div>
 				</div>
