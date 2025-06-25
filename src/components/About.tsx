@@ -27,7 +27,7 @@ export const About = () => {
 							<div className="flex justify-between">
 								<span className="text-[var(--pixel-white)]">LEVEL:</span>
 								<span className="text-[var(--pixel-yellow)]">
-									MIDDLE-SENIOR
+									MIDDLE_SENIOR
 								</span>
 							</div>
 							<div className="flex justify-between">

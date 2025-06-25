@@ -164,10 +164,12 @@ export const Contact = () => {
 					<div className="pixel-card max-w-md mx-auto">
 						<div className="font-pixel text-sm text-pixel-white">
 							STATUS:{' '}
-							<span className="text-pixel-green animate-blink">ONLINE</span>
+							<span className="text-[var(--pixel-green)] animate-blink">
+								ONLINE
+							</span>
 							<br />
 							RESPONSE_TIME:{' '}
-							<span className="text-pixel-yellow">~24 HOURS</span>
+							<span className="text-[var(--pixel-yellow)]">~24 HOURS</span>
 							<br />
 							AVAILABILITY:{' '}
 							<span className="text-pixel-cyan">READY_FOR_PROJECTS</span>
