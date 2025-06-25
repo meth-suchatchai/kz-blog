@@ -33,7 +33,7 @@ export const Contact = () => {
 	return (
 		<section id="contact" className="py-20 px-4 bg-[var(--pixel-gray-dark)/20]">
 			<div className="container mx-auto max-w-4xl">
-				<h2 className="text-3xl md:text-4xl font-pixel text-[var(--pixel-green)] text-center mb-12 text-glow">
+				<h2 className="text-xl md:text-2xl font-pixel text-[var(--pixel-green)] text-center mb-12 text-glow">
 					ESTABLISH_CONNECTION
 				</h2>
 

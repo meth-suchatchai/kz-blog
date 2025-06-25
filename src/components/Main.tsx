@@ -44,13 +44,15 @@ export const Main = () => {
 		>
 			<div className="text-center z-10">
 				{/* Pixel Art Avatar Placeholder */}
-				<div className="w-32 h-32 mx-auto mb-8 bg-[var(--pixel-gray-dark)] border-4 border-[var(--pixel-green)] relative">
-					<div className="absolute inset-4 bg-[var(--pixel-black)]"></div>
-					<div className="absolute top-6 left-6 w-4 h-4 bg-[var(--pixel-green)]"></div>
-					<div className="absolute top-6 right-6 w-4 h-4 bg-[var(--pixel-green)]"></div>
-					<div className="absolute bottom-8 left-8 w-16 h-2 bg-[var(--pixel-green)] rounded-full"></div>
-					<div className="text-[var(--pixel-green)] text-xs font-pixel absolute -bottom-8 left-1/2 transform -translate-x-1/2">
-						KUROSHIBA
+				<div className="flex my-5">
+					<div className="w-32 h-32 mx-auto mb-8 bg-[var(--pixel-gray-dark)] border-4 border-[var(--pixel-green)] relative">
+						<div className="absolute inset-4 bg-[var(--pixel-black)]"></div>
+						<div className="absolute top-6 left-6 w-4 h-4 bg-[var(--pixel-green)]"></div>
+						<div className="absolute top-6 right-6 w-4 h-4 bg-[var(--pixel-green)]"></div>
+						<div className="absolute bottom-8 left-8 w-16 h-2 bg-[var(--pixel-green)] rounded-full"></div>
+						<div className="text-[var(--pixel-green)] text-xs font-pixel absolute -bottom-8 left-1/2 transform -translate-x-1/2">
+							KUROSHIBA
+						</div>
 					</div>
 				</div>
 
@@ -80,7 +82,7 @@ export const Main = () => {
 				</div> */}
 
 				{/* Animated Title */}
-				<h1 className="text-4xl md:text-4xl font-pixel text-[var(--pixel-green)] mb-4 text-glow my-3">
+				<h1 className="text-3xl md:text-4xl font-pixel text-[var(--pixel-green)] mb-5 mt-5 text-glow">
 					{text}
 					<span
 						className={`${
@@ -92,7 +94,7 @@ export const Main = () => {
 				</h1>
 
 				{/* Subtitle */}
-				<p className="text-xl md:text-2xl font-pixel text-pixel-white mb-8">
+				<p className="text-xl md:text-2xl font-pixel text-pixel-white mb-8 px-2">
 					FULLSTACK DEVELOPER
 				</p>
 

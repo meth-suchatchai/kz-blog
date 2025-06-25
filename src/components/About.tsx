@@ -2,7 +2,7 @@ export const About = () => {
 	return (
 		<section id="about" className="py-20 px-4">
 			<div className="container mx-auto max-w-4xl">
-				<h2 className="text-3xl md:text-4xl font-pixel text-[var(--pixel-green)] text-center mb-12 text-glow">
+				<h2 className="text-2xl md:text-3xl font-pixel text-[var(--pixel-green)] text-center mb-12 text-glow">
 					ABOUT KUROSHIBA
 				</h2>
 
@@ -81,18 +81,23 @@ export const About = () => {
 						{[
 							{
 								name: 'GOLANG_MASTER',
-								color: 'text-pixel-cyan',
+								color: 'text-[var(--pixel-cyan)]',
 							},
-							{ name: 'REACT_WIZARD', color: 'text-pixel-green' },
-							{ name: 'DDD_ARTITECHTURE', color: 'text-pixel-yellow' },
-							{ name: 'INFRASTRUCTURE_DESIGN', color: 'text-pixel-magenta' },
+							{ name: 'REACT_WIZARD', color: 'text-[var(--pixel-green)]' },
+							{ name: 'DDD_ARTITECHTURE', color: 'text-[var(--pixel-yellow)]' },
+							{
+								name: 'INFRASTRUCTURE_DESIGN',
+								color: 'text-[var(--pixel-magenta)]',
+							},
 						].map((achievement) => (
 							<div key={achievement.name} className="text-center">
 								<div className="w-16 h-16 mx-auto mb-2 bg-[var(--pixel-gray-dark)] border-2 border-[var(--pixel-green)] flex items-center justify-center">
 									<div className="w-8 h-8 bg-[var(--pixel-green)]"></div>
 									{/* {achievement.render} */}
 								</div>
-								<div className={`font-pixel text-xs ${achievement.color}`}>
+								<div
+									className={`font-pixel text-[14px] md:text-xs ${achievement.color}`}
+								>
 									{achievement.name}
 								</div>
 							</div>

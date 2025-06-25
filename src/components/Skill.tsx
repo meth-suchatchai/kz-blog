@@ -25,16 +25,18 @@ export const Skills = () => {
 
 	return (
 		<section id="skills" className="py-20 px-4 bg-[var(--pixel-gray-dark)/20]">
-			<div className="container mx-auto max-w-4xl">
-				<h2 className="text-3xl md:text-4xl font-pixel text-[var(--pixel-green)] text-center mb-12 text-glow">
-					SKILL_TREE
-				</h2>
+			<div className="container mx-auto max-aw-4xl">
+				<div className="grid grid-cols-1">
+					<h2 className="text-3xl md:text-4xl font-pixel text-[var(--pixel-green)] text-center mb-12 text-glow">
+						SKILL_TREE
+					</h2>
+				</div>
 
-				<div className="grid md:grid-cols-2 gap-12">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 					{/* Programming Skills */}
 					<div className="pixel-card">
 						<div className="border-b-2 border-[var(--pixel-green)] pb-4 mb-6">
-							<h3 className="font-pixel text-[var(--pixel-yellow)] text-lg">
+							<h3 className="font-pixel text-[var(--pixel-yellow)] text-md md:text-lg">
 								PROGRAMMING_LANGUAGES
 							</h3>
 						</div>
@@ -69,7 +71,7 @@ export const Skills = () => {
 							</h3>
 						</div>
 
-						<div className="grid grid-cols-2 gap-4">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 							{tools.map((tool, index) => (
 								<div
 									key={tool}
